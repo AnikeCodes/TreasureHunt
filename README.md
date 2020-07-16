@@ -6,3 +6,6 @@ Get the user to enter coordinates where they think the treasure is.
 If there is a '1' at this position display "success."
 Repeat the above until they find it.
 extension: add a feature to say 'hot', 'cold', 'warm' depending on how close their guess was to the actual hidden location.
+
+Feel free to run this game in any Python IDE or Replit.
+Please feel free to give comments and/or make suggestions.
