@@ -1,0 +1,76 @@
+import random
+
+def takename():
+  username = input("Hi, what is your name? ")
+  print("\nHi " + username + ", let's play find the treasure!\n")
+  return username
+
+def setupboard():
+  w, h = 10, 10;
+
+  # initialise array and full all spaces with row
+  matrix = [['x' for row in range(w)] for column in range(h)] 
+
+  # print board for user to visualise
+  print (*matrix, sep='\n')
+  print("\nThe treasure is hidden somewhere in the grid under a 'x'.")
+  return matrix
+
+def setupgame(matrix):
+  #fill array index with "treasure"
+  location = 1
+      
+  row = random.randint(0,9)
+  column = random.randint(0,9)
+  matrix[row][column] = location
+  
+  #test to see where the treasure is
+  #print(*matrix, sep='\n')
+  #print("treasure at: (%d,%d)" % (row,column))
+  return row, column
+ 
+def userinputs():
+  coord1 = int(input("\nPlease enter the x coordinate for where you think the treasure is: "))
+  coord2 = int(input("Please enter the y coordinate for where you think the treasure is: "))
+  #print to help get coordinates
+  #print("user guess: (%d,%d)" % (coord1,coord2))
+  return coord1, coord2
+
+# this is the function giving me the most trouble, it's calculating the distances.
+def testlocation(coord1,coord2, row, column):
+  if (coord1-row==0) and (coord2-column == 0):
+    print("\nSuccess "+username+ "! You found the treasure!")
+    return 1
+  elif (coord1-row==0) or (coord2-column == 0):
+    print ("\nWow "+username+ ", you are close to the treasure! One of your coordinates is spot on!")
+    return 0
+  elif (abs(coord1 - row) == 1 or abs(coord2 - column) == 1):
+    print ("\nWow "+username+ ", your guess is hot! One of your coordinates is one space away from the treasure.")
+    return 0
+  elif (abs(coord1 - row) == 2 or abs(coord2 - column) == 2):
+    print ("\nWow "+username+ ", you are quite close to the treasure, so your guess is warm. One of your coordinates is two spaces away from the treasure.")
+    return 0
+  else: 
+    print ("\nSorry "+username+ ", try again. Your guess is very cold.")
+    return 0
+
+def gameplay():
+  matrix = setupboard()
+  row,column = setupgame(matrix)
+  coord1, coord2 = userinputs()
+  while testlocation(coord1,coord2, row, column) == 0:
+    coord1, coord2 = userinputs()
+  else: 
+   newgame = input("Would you like to play again? Enter Y/N: ")
+  if newgame.upper()== 'Y':
+      print("\n\n")
+      return 1
+  else: 
+      print("\nOkay, goodbye.")
+      return 0
+
+
+username = takename()
+newgame = gameplay()
+while newgame==1:
+  newgame = gameplay()
