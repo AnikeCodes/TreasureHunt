@@ -1,4 +1,4 @@
-# TreasureHunt
+# Treasure Hunt Game
 
 What this project is:
 This is a simple treasure hunt game that is played in a 10 by 10 grid set up.
