@@ -12,7 +12,7 @@ Steps I took:
 
 *Task Extension: Add a feature to say 'hot', 'cold', 'warm' depending on how close their guess was to the actual hidden location.
 
-How to use it
+How to use it: 
 Feel free to run this game in any Python IDE or Replit.
 
 Please feel free to give comments and/or make suggestions, thank you!
