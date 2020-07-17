@@ -9,6 +9,7 @@ Steps I took:
 3) Get the user to enter coordinates where they think the treasure is.
 4) If the user guesses a position where there is a '1', return a "success, you have found the treasure!" message.
 5) If not, repeat step 3 the above until they find the treasure.
+
 *Task Extension: Add a feature to say 'hot', 'cold', 'warm' depending on how close their guess was to the actual hidden location.
 
 How to use it
