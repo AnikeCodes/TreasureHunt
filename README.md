@@ -4,7 +4,7 @@ What this project is:
 This is a simple treasure hunt game that is played in a 10 by 10 grid set up.
 
 Steps I took:
-1) Create a 2D array of integers 10 by 10, each position initialised with integer 0.
+1) Create a 10 by 10 2D array of integers, each position initialised with integer 0.
 2) In a random position in the array store the number 1.
 3) Get the user to enter coordinates where they think the treasure is.
 4) If the user guesses a position where there is a '1', return a "success, you have found the treasure!" message.
